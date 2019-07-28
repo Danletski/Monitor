@@ -11,8 +11,10 @@ As default the dashboard provides the hosts stats.
 ### Dependencies
 
 * Any Linux/Unix/Win host.
-* VirtualBox + Vagrant
+* VirtualBox 
+* Vagrant
 * Internet connection
+* Python
 
 ### Installing
 
@@ -20,11 +22,12 @@ As default the dashboard provides the hosts stats.
 * Follow the Execution steps bellow
 * Login to Grafana dashboard: 
 	http://localhost:3000
+* Select the "Docker monitor" dashboard to view the hosts stats
 
 ### Executing program
 
 * Navigate to the "Monitor" Folder
-* Make sure VirtualBox is running
+* Make sure VirtualBox & Vagrant are running
 * In the command line run "vagrant up -d"
 * Or use the attached Jenkins file to run it as a Jenkins pipepline job
 ```
@@ -39,6 +42,8 @@ Login
 Grafana default credentials:
 username - admin
 password - foobar (Password is stored in the `/grafana/config.monitoring` env file)
+
+Dockers inside the VM are deployed using the docker-compose.yml file and their configurations files that are saved respectivly under the service folders.
 ```
 
 ## Authors

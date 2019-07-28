@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
   config.vm.synced_folder "./", "/etc/ansible"
-config.vm.network "public_network", 
+  config.vm.network "public_network", 
     use_dhcp_assigned_default_route: true
   config.vm.network "forwarded_port", guest: 9090, host: 9090
   config.vm.network "forwarded_port", guest: 3000, host: 3000
@@ -12,11 +12,13 @@ config.vm.network "public_network",
     v.memory = 2048
     v.cpus = 2
     v.name = "Monitor"
+  config.vm.provision :shell, :inline => "sudo rm /etc/localtime && sudo ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime", run: "always"
   end
    config.vm.provision "shell", inline: <<-SHELL
      apt-get install -y software-properties-common
      apt-add-repository ppa:ansible/ansible
      apt-get update
      apt-get install -y ansible
+     apt-get install -y python-pip 
    SHELL
   end

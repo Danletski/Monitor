@@ -1,1 +1,0 @@
-{"virtualbox":{"/etc/ansible":{"guestpath":"/etc/ansible","hostpath":"/Users/dans/Desktop/Monitor","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/dans/Desktop/Monitor","disabled":false,"__vagrantfile":true}}}
